@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>رزومه حرفه‌ای - محمدامیر سلیمانی</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #5a4fcf;
+  --secondary: #7c72e7;
+  --accent: #b9b4ff;
+  --bg: #eef0ff;
+  --card-bg: #f7f8ff;
+  --text: #333;
+  --text-light: #666;
+  --radius: 22px;
+  --shadow-light: 8px 8px 20px #c8cae0, -8px -8px 20px #ffffff;
+  --shadow-heavy: 10px 10px 25px #b4b6cc, -10px -10px 25px #ffffff;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding-bottom: 30px;
+  box-shadow: var(--shadow-heavy);
+  overflow: hidden;
+  position: relative;
+}
+
+/* --- HEADER --- */
+.header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 40px 20px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  width: 180%;
+  height: 180%;
+  top: -40%;
+  right: -40%;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 60%);
+  animation: rotate 16s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  border: 3px solid rgba(255,255,255,0.35);
+  transition: var(--transition);
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+}
+.avatar:hover {
+  transform: scale(1.06);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+}
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.avatar:hover::before {
+  opacity: 1;
+}
+
+.info h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.title {
+  font-size: 18px;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 50px;
+  backdrop-filter: blur(5px);
+  transition: var(--transition);
+}
+.contact-item:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-3px);
+}
+.contact-item i {
+  font-size: 16px;
+}
+
+/* --- SECTION --- */
+.section {
+  padding: 30px 20px;
+  position: relative;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 22px;
+  position: relative;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 6px;
+  height: 24px;
+  transform: translateY(-50%);
+  background: var(--secondary);
+  border-radius: 5px;
+}
+.section-title i {
+  font-size: 22px;
+  color: var(--secondary);
+}
+
+/* --- CARDS --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+.card:hover::before {
+  transform: scaleX(1);
+}
+.card:hover {
+  box-shadow: var(--shadow-heavy);
+  transform: translateY(-8px);
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.card-title i {
+  font-size: 20px;
+  color: var(--secondary);
+}
+
+.card-desc {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* --- SKILLS --- */
+.skill-item {
+  margin-bottom: 15px;
+}
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.skill-bar {
+  background: #dfe2ff;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.skill-bar-inner {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 1.6s ease;
+  position: relative;
+  overflow: hidden;
+}
+.skill-bar-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 2s infinite;
+}
+@keyframes shine {
+  0% { transform: translateX(100px); }
+  100% { transform: translateX(-100px); }
+}
+
+/* --- TIMELINE --- */
+.timeline {
+  position: relative;
+  border-right: 3px solid var(--accent);
+  padding-right: 20px;
+  margin-left: 15px;
+}
+
+.timeline-item {
+  margin-bottom: 25px;
+  position: relative;
+}
+.timeline-item::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  right: -27px;
+  top: 8px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.9);
+  z-index: 2;
+  transition: var(--transition);
+}
+.timeline-item:hover::before {
+  transform: scale(1.2);
+  background: var(--secondary);
+}
+
+.timeline-content {
+  padding: 18px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(90,79,207,0.03) 0%, rgba(124,114,231,0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.timeline-content:hover::before {
+  opacity: 1;
+}
+.timeline-content:hover {
+  box-shadow: var(--shadow-heavy);
+  transform: translateX(-5px);
+}
+.timeline-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.timeline-title i {
+  font-size: 17px;
+  color: var(--secondary);
+}
+.timeline-date {
+  color: var(--text-light);
+  margin-bottom: 10px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- PROJECTS --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+}
+.project-card:hover {
+  box-shadow: var(--shadow-heavy);
+  transform: translateY(-8px);
+}
+.project-img {
+  height: 160px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 45px;
+  position: relative;
+  overflow: hidden;
+}
+.project-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+}
+.project-content {
+  padding: 18px;
+}
+.project-title {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.project-desc {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+.project-tag {
+  background: rgba(90,79,207,0.1);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  transition: var(--transition);
+}
+.project-tag:hover {
+  background: rgba(90,79,207,0.2);
+  transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+.footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--primary);
+  font-weight: 600;
+  opacity: 0.7;
+  border-top: 1px solid rgba(90,79,207,0.1);
+  font-size: 14px;
+}
+
+/* --- RESPONSIVE FOR TABLET --- */
+@media (min-width: 768px) {
+  body {
+    padding: 25px;
+  }
+  
+  .header {
+    flex-direction: row;
+    text-align: right;
+    justify-content: flex-start;
+    padding: 50px 40px;
+    gap: 30px;
+  }
+  
+  .avatar {
+    width: 160px;
+    height: 160px;
+    font-size: 50px;
+  }
+  
+  .info h1 {
+    font-size: 42px;
+  }
+  
+  .title {
+    font-size: 20px;
+  }
+  
+  .contact-info {
+    justify-content: flex-start;
+    gap: 18px;
+  }
+  
+  .contact-item {
+    font-size: 16px;
+  }
+  
+  .contact-item i {
+    font-size: 18px;
+  }
+  
+  .section {
+    padding: 40px 35px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .timeline {
+    margin-left: 20px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item::before {
+    right: -34px;
+  }
+}
+
+/* --- RESPONSIVE FOR DESKTOP --- */
+@media (min-width: 1024px) {
+  .container {
+    padding-bottom: 40px;
+  }
+  
+  .header {
+    padding: 60px 40px;
+  }
+  
+  .section {
+    padding: 45px 40px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+/* --- UTILITY CLASSES --- */
+ul {
+  padding-right: 20px;
+  margin: 10px 0;
+}
+
+li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+strong {
+  color: var(--primary);
+}
+
+/* --- ANIMATION FOR SCROLL --- */
+.card, .timeline-item, .project-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* --- RESPONSIVE FOR MOBILE (max-width: 576px) --- */
+@media (max-width: 576px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding-bottom: 20px;
+    border-radius: 16px;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 35px 20px;
+    gap: 18px;
+  }
+
+  .avatar {
+    width: 110px;
+    height: 110px;
+    font-size: 34px;
+  }
+
+  .info h1 {
+    font-size: 24px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .contact-info {
+    gap: 8px;
+  }
+
+  .contact-item {
+    font-size: 12.5px;
+    padding: 6px 10px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 25px 15px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  /* CARDS */
+  .card {
+    padding: 18px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-desc {
+    font-size: 14px;
+  }
+
+  /* SKILLS */
+  .skill-info {
+    font-size: 12px;
+  }
+  .skill-bar {
+    height: 8px;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    padding-right: 15px;
+    margin-left: 10px;
+    border-right: 2px solid var(--accent);
+  }
+
+  .timeline-item::before {
+    right: -22px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding: 15px;
+  }
+
+  .timeline-title {
+    font-size: 15px;
+  }
+
+  .timeline-date {
+    font-size: 12px;
+  }
+
+  /* PROJECTS */
+  .project-img {
+    height: 130px;
+    font-size: 38px;
+  }
+
+  .project-content {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 15px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+  }
+
+  .project-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  /* FOOTER */
+  .footer {
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="avatar">م ا</div>
+    <div class="info">
+      <h1>محمدامیر سلیمانی</h1>
+      <div class="title">مهندس کامپیوتر | متخصص رسانه و تولید محتوا</div>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-phone"></i> 0910-5491557 </div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> mohammadamirso1378@email.com</div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> کرمانشاه</div>
+        <div class="contact-item"><i class="fas fa-id-card"></i> کد ملی: 3330418311</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-user"></i> درباره من</h2>
+    <p>فارغ‌التحصیل مهندسی کامپیوتر هستم و در سال‌های اخیر بیشتر در حوزه رسانه و تولید محتوا فعالیت کرده‌ام. تجربه مدیریت رسانه در مجموعه‌های فرهنگی و آموزشی را داشته‌ام و تلاش می‌کنم در هر پروژه خروجی دقیق و قابل‌اعتماد ارائه کنم.</p>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-cogs"></i> مهارت‌های فنی</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-palette"></i> طراحی و تدوین</div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Photoshop</span><span>75%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:75%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Premiere</span><span>80%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>After Effects</span><span>20%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:20%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>Audition</span><span>20%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:20%"></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-code"></i> توسعه و فناوری</div>
+        <div class="skill-item">
+          <div class="skill-info"><span>WordPress</span><span>50%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:50%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>C++</span><span>60%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:60%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-info"><span>HTML / CSS</span><span>70%</span></div>
+          <div class="skill-bar"><div class="skill-bar-inner" style="width:70%"></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-users"></i> مهارت‌های نرم</div>
+        <div class="card-desc">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> مدیریت پروژه و تیم</li>
+            <li><i class="fas fa-check-circle"></i> روابط عمومی و ارتباطات</li>
+            <li><i class="fas fa-check-circle"></i> خلاقیت در تولید محتوا</li>
+            <li><i class="fas fa-check-circle"></i> برنامه‌ریزی و سازماندهی</li>
+            <li><i class="fas fa-check-circle"></i> حل مسئله و تصمیم‌گیری</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-briefcase"></i> تجربیات حرفه‌ای</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> ۱۴۰۰ - اکنون</div>
+          <div class="timeline-title"><i class="fas fa-video"></i> مسئول رسانه حسینیه هنر کرمانشاه</div>
+          <div class="card-desc">
+            <ul>
+              <li>مدیریت رسانه و تیم تولید محتوا</li>
+              <li>تدوین و تولید ویدئوهای حرفه‌ای</li>
+              <li>طراحی و اجرای کمپین‌های بصری</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> ۱۳۹۹ - ۱۴۰۰</div>
+          <div class="timeline-title"><i class="fas fa-film"></i> مسئول اکران جشنواره مردمی عمار</div>
+          <div class="card-desc">
+            <ul>
+              <li>برنامه‌ریزی اکران‌ها</li>
+              <li>هماهنگی با تیم‌های پخش</li>
+              <li>برگزاری جلسات نقد فیلم</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date"><i class="far fa-calendar-alt"></i> ۱۳۹۸ - ۱۳۹۹</div>
+          <div class="timeline-title"><i class="fas fa-chalkboard-teacher"></i> مسئول روابط عمومی مجتمع مدارس امام مهدی</div>
+          <div class="card-desc">
+            <ul>
+              <li>مدیریت اطلاع‌رسانی و ارتباطات</li>
+              <li>تولید محتوای شبکه‌های اجتماعی</li>
+              <li>برگزاری مراسم و رویدادها</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-project-diagram"></i> پروژه‌های نمونه</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-img">
+          <i class="fas fa-video"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-title"><i class="fas fa-play-circle"></i> تولید محتوای ویدئویی</div>
+          <div class="project-desc">تولید و تدوین مجموعه ویدئوهای آموزشی و فرهنگی برای رسانه حسینیه هنر</div>
+          <div class="project-tags">
+            <span class="project-tag">Premiere</span>
+            <span class="project-tag">After Effects</span>
+            <span class="project-tag">تدوین</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-title"><i class="fas fa-image"></i> طراحی گرافیک</div>
+          <div class="project-desc">طراحی پوستر، بنر و محتوای بصری برای شبکه‌های اجتماعی و رویدادها</div>
+          <div class="project-tags">
+            <span class="project-tag">Photoshop</span>
+            <span class="project-tag">طراحی</span>
+            <span class="project-tag">گرافیک</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="project-content">
+          <div class="project-title"><i class="fas fa-globe"></i> توسعه وب</div>
+          <div class="project-desc">طراحی و توسعه وبسایت‌های مختلف با استفاده از WordPress و HTML/CSS</div>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">HTML/CSS</span>
+            <span class="project-tag">طراحی وب</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> تحصیلات و دوره‌ها</h2>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-university"></i> تحصیلات دانشگاهی</div>
+        <div class="card-desc">
+          <strong>مهندسی کامپیوتر</strong><br />
+          دانشگاه رازی کرمانشاه<br />
+          <i class="far fa-calendar-alt"></i> ۱۳۹۵ - ۱۳۹۹
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-certificate"></i> دوره‌های تخصصی</div>
+        <div class="card-desc">
+          <ul>
+            <li><i class="fas fa-pen-nib"></i> روایت‌نویسی</li>
+            <li><i class="fas fa-camera"></i> مستندسازی</li>
+            <li><i class="fas fa-desktop"></i> فتوشاپ و پریمیر پیشرفته</li>
+            <li><i class="fas fa-code"></i> برنامه‌نویسی C++</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-book-open"></i> دوره‌های فرهنگی</div>
+        <div class="card-desc">
+          <ul>
+            <li><i class="fas fa-star"></i> اسلام ناب</li>
+            <li><i class="fas fa-star"></i> شهید نوروزی</li>
+            <li><i class="fas fa-star"></i> مبانی مدیریت فرهنگی</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">© ۱۴۰۳ - محمدامیر سلیمانی | رزومه حرفه‌ای</div>
+
+</div>
+
+<script>
+window.addEventListener('load', () => {
+  const bars = document.querySelectorAll('.skill-bar-inner');
+  bars.forEach(bar => {
+    const w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => bar.style.width = w, 300);
+  });
+  
+  // Add scroll animation
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.card, .timeline-item, .project-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+});
+</script>
+</body>
+</html>
